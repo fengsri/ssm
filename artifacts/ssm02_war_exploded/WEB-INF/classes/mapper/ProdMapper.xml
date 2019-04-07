@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.ProdMapper" >
+
+    <!-- public List<Product> findAllProduct();-->
+    <select id="findAllProduct" resultType="Product">
+        select * from product
+    </select>
+
+
+    <!--  public Product findById(String product_id);-->
+    <select id="findById" parameterType="String" resultType="Product">
+        select * from product where product_id=#{product_id}
+    </select>
+
+
+    <!--public int motifiProduct(Product product);-->
+    <update id="motifiProduct" parameterType="Product">
+         update product set product_name=#{product_name},product_pic=#{product_pic},product_dis=#{product_dis} where product_id=#{product_id}
+    </update>
+
+   <!-- public int delete(String product_id);-->
+    <delete id="delete" parameterType="String">
+        delete from product where product_id=#{product_id}
+    </delete>
+
+    <!--public int add(Product product);-->
+    <insert id="add" parameterType="Product">
+        insert into product (product_name,product_pic,product_dis) values (#{product_name},#{product_pic},#{product_dis})
+    </insert>
+
+    <!--public List<User> search(String product_like);-->
+    <select id="search" parameterType="String" resultType="Product">
+        select * from product
+        <where>
+            <if test="product_like != null and product_like != ''">
+                product_name LIKE '%${product_like}%'
+            </if>
+        </where>
+    </select>
+
+</mapper>

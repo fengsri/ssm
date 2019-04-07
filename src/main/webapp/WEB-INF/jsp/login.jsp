@@ -6,9 +6,9 @@
 </head>
 <body>
     登陆：<br/>
-    <form action="${pageContext.request.contextPath }/user/login_user" method="post">
-        用户名：<input type="text" name="username"><br/>
-        密码：<input type="password" name="password"><br/>
+    <form action="${pageContext.request.contextPath }/user/userlogin" method="post">
+        用户名：<input type="text" name="user_name"><br/>
+        密码：<input type="password" name="user_password"><br/>
         <input type="submit" value="登陆">
     </form>
 </body>

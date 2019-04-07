@@ -12,7 +12,7 @@
 </head>
 <body>
 注册<br/>
-<form method="post" action="${pageContext.request.contextPath}/user/regist">
+<form method="post" action="${pageContext.request.contextPath}/user/userregist">
     用户名：<input type="text" name="user_name"><br/>
     密码：<input type="password" name="user_password"><br/>
     <input type="submit" value="注册">

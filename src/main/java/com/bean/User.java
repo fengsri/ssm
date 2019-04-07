@@ -4,19 +4,15 @@ import java.io.Serializable;
 
 public class User  implements Serializable {
     private int user_id;
-    private int user_type;
     private String user_name;
     private String user_password;
 
     public User() {
     }
 
-    public int getUser_type() {
-        return user_type;
-    }
-
-    public void setUser_type(int user_type) {
-        this.user_type = user_type;
+    public User(String user_name, String user_password) {
+        this.user_name = user_name;
+        this.user_password = user_password;
     }
 
     public int getUser_id() {
